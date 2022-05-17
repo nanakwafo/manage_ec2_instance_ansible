@@ -1,6 +1,4 @@
-# Using Ansible with AWS
 
-This repo contains the code to go along with my YouTube video Using Ansible with AWS.
 
 ## Create a virtual environment
 
@@ -46,8 +44,6 @@ You can also target specific hosts based on tag names:
 
 will connect to all EC2 instances with a tag named `Role` that has a value of `webserver`
 
-## Using playbooks
+## About Me
 
-You can now configure EC2 instances using ansible playbooks that you create, or downloaded from [Ansible Galaxy](https://galaxy.ansible.com/home).
-
-For additional details, check out the accompanying video on the DevOps for Developers [YouTube](https://youtube.com/devopsfordevelopers) channel.
+ [Blog](http://nanalabs.link/).
