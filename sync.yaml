@@ -1,0 +1,17 @@
+---
+- name: Sync project files to remote
+  gather_facts: false
+  become: yes
+  hosts: tag_Role_webserver
+  tasks:
+    - name: "sync website"
+      synchronize:
+        src: site/
+        dest: /var/www/nanalabs.com
+        archive: no
+        checksum: yes
+        recursive: yes
+        delete: yes
+      become: no
+
+    
