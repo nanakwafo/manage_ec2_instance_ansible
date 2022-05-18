@@ -10,3 +10,4 @@ keyed_groups:
     prefix: instance_type
   - key: placement.region
     prefix: aws_region
+  

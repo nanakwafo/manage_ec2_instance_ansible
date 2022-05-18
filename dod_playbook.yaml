@@ -1,7 +1,23 @@
 ---
-- name: Ansible Test Playbook
+- name: Installing and configuring nginx
   gather_facts: false
+  become: yes
   hosts: tag_Role_webserver
   tasks:
-    - name: Run Shell Command
-      command: echo "Hello World1"
+    - name: "apt-get update"
+      apt: 
+         update_cache: yes
+         cache_valid_time: 3600
+
+    - name: "install nginx"
+      apt:
+        name: ['nginx']
+        state: latest 
+
+    - name: "create www directory"
+      file:
+        path: /var/www/helloworld.com
+        state: directory
+        mode: '0775'
+        owner: ubuntu
+        group: ubuntu
