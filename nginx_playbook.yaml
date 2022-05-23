@@ -5,6 +5,7 @@
   hosts: tag_Role_webserver
   vars:
     - user: ubuntu
+    - domain: nanalabs.com           
 
   tasks:
     - name: "apt-get update"
