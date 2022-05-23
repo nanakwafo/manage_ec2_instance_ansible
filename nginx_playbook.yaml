@@ -3,6 +3,9 @@
   gather_facts: false
   become: yes
   hosts: tag_Role_webserver
+  vars:
+    - user: ubuntu
+
   tasks:
     - name: "apt-get update"
       apt: 
@@ -19,8 +22,8 @@
         path: /var/www/nanalabs.com
         state: directory
         mode: '0775'
-        owner: ubuntu
-        group: ubuntu
+        owner: "{{ user }}"
+        group: "{{ user }}"
 
     - name: delete default nginx site
       file:
